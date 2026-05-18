@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_without	s2n		# s2n-tls support (otherwise ByoCrypto mode, with external context management)
-%bcond_with	tests		# unit tests (require localhost networking)
+%bcond_with	tests		# unit tests (require networking)
 #
 Summary:	AWS C IO library
 Summary(pl.UTF-8):	Biblioteka AWS C IO
 Name:		aws-c-io
-Version:	0.20.1
+Version:	0.26.3
 Release:	1
 License:	Apache v2.0
 Group:		Libraries
 #Source0Download: https://github.com/awslabs/aws-c-io/releases
 Source0:	https://github.com/awslabs/aws-c-io/archive/v%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	e8c2c58b0b6af23c30b521fbbec99ceb
+# Source0-md5:	3dfbc1a594e5e92f65506bff23ab83cc
 URL:		https://github.com/awslabs/aws-c-io
 BuildRequires:	aws-c-cal-devel
 BuildRequires:	aws-c-common-devel
@@ -102,7 +102,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc NOTICE README.md
-%attr(755,root,root) %{_libdir}/libaws-c-io.so.1.0.0
+%{_libdir}/libaws-c-io.so.1.0.0
 
 %files devel
 %defattr(644,root,root,755)
